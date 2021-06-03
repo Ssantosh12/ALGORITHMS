@@ -2,7 +2,8 @@
 using namespace std;
 
 int main(){
-   int t=1,i,cnt;
+   int t=1,i,cnt;   //same as checking whether the brackets are balanced or not, its just that when when we see the contions of not balanced
+                    //then we try to make it balanced by reversing a bracket that costs 1 move
 
    string s;
    while(1){
