@@ -2,6 +2,9 @@
 using namespace std;
 
 int main(){
+       
+       // Problem : given two arrays a and b of size n barrels each having some elements, we have to 
+       
        int x,n,m,i,sum1=0,sum2=0,ans=0,left,right,cnd;
        scanf("%d",&n);
        int a[n];
