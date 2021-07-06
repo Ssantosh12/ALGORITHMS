@@ -3,7 +3,8 @@ using namespace std;
 
 int main(){
        
-       // Problem : given two arrays a and b of size n barrels each having some elements, we have to 
+       // Problem : given two arrays a and b of size n barrels each having some elements, we have to take another array of size n and fill each ith posn of this new array
+       // from any two posn of both of the arrays a and b
        
        int x,n,m,i,sum1=0,sum2=0,ans=0,left,right,cnd;
        scanf("%d",&n);
