@@ -2,7 +2,7 @@
 using namespace std;
  
 int main(){
-    int n,e,i,u,v,cnt=0,node,curr;
+    int n,e,i,u,v,cnt=0,node,curr;  //n= no.of nodes, e= no.of edges , nodes are from 0 to n-1
  
     scanf("%d%d",&n,&e);
  
@@ -14,8 +14,6 @@ int main(){
     //first we are going to create an adjacency list
     for(i=0;i<e;i++){
         scanf("%d%d",&u,&v);
-        u--;
-        v--;
         adjvc[u].push_back(v);
         adjvc[v].push_back(u);
     }
@@ -26,6 +24,7 @@ int main(){
             stk.push(node);
             visited[node]=true;
             
+         //we run dfs for each component
             while(!stk.empty()){
                 curr=stk.top();
                 if(!adjvc[curr].empty()){
