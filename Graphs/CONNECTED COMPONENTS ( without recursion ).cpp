@@ -1,14 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 int main(){
-    int i,j,node,cnt=0,u,v,n,e;
+    int n,e,i,u,v,cnt=0,node,curr;
+ 
     scanf("%d%d",&n,&e);
-
+ 
     vector<vector<int>> adjvc(n);
-    set<int> st;
+    vector<bool> visited(n,false);
     stack<int> stk;
-    //creating adjacency matrix to store graph
+    vector<int> ans;
+ 
+    //first we are going to create an adjacency list
     for(i=0;i<e;i++){
         scanf("%d%d",&u,&v);
         u--;
@@ -16,35 +19,33 @@ int main(){
         adjvc[u].push_back(v);
         adjvc[v].push_back(u);
     }
-
-    //we use stack for dfs-> top node on stack is the current node being processed
-
-    while(st.size()!=n){
-        if(stk.empty()){
-            for(node=0;node<n;node++){
-                if(st.find(node)==st.end()){
-                    stk.push(node);
-                    st.insert(node);
-                    break;
+ 
+    //now for every node that is not visited , we are going to run dfs from that node
+    for(node=0;node<n;node++){
+        if(visited[node]==false){
+            stk.push(node);
+            visited[node]=true;
+            
+            while(!stk.empty()){
+                curr=stk.top();
+                if(!adjvc[curr].empty()){
+                    stk.push(adjvc[curr].back());
+ 
+                    if(visited[adjvc[curr].back()]==false){
+                        visited[adjvc[curr].back()]=true;
+                        
+                    }
+ 
+                    adjvc[curr].pop_back();
                 }
+                else
+                    stk.pop();
+ 
             }
-        }
-        else{
-            node=stk.top();
-            if(adjvc[node].empty()){
-                stk.pop();
-                if(stk.empty())
-                    cnt++;
-            }
-            else{
-                stk.push(adjvc[node].back());
-                st.insert(adjvc[node].back());
-                adjvc[node].pop_back();
-            }
+            // counting each component
+            cnt++;
         }
     }
-    
-    cnt++;  // cnt is incremented by 1 because the last component remained in it and loop exited before emptying the stack conataining this last component
-
+ 
     printf("%d\n",cnt);
 }
