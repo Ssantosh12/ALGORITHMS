@@ -28,7 +28,7 @@ int main(){
     //we insert the initial node 0 in the queue to start bfs
     q.push(0);
     while(!q.empty()){
-        if(visited[q.front()]==false){
+        if(visited[q.front()]==false){  //here we only print the node value if it unvisited
              cout<<q.front()<<" ";
              visited[q.front()]=true;
         }
