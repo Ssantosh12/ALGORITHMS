@@ -1,19 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
- void merging(int arr[],int const left,int const mid,int const right){
-     //create two arrays
-     auto sizl=mid-left+1,sizr=right-mid;
-     auto  *larr = new int[sizl];
-     auto  *rarr = new int[sizr];
-     for(auto i=0;i<sizl;i++)
+ void merging(int arr[],int left,int mid,int right){
+     //create two temporary arrays that will contain the left subarray and right subarray
+     int  i,sizl=mid-left+1,sizr=right-mid;
+     int larr[sizl];
+     int rarr[sizr];
+     
+    //copy elements from the main array
+     for(i=0;i<sizl;i++)
         larr[i]=arr[left+i];
 
-     for(auto i=0;i<sizr;i++)
+     for(i=0;i<sizr;i++)
         rarr[i]=arr[mid+1+i];
 
-     auto indl=0,indr=0,indarr=left;
+     int indl=0,indr=0,indarr=left;
 
+    //merge the two sorted subarrays in the main array using the standard merging procedure of merging two sorted subarrays
      while(indl<sizl && indr<sizr){
         if(larr[indl]<=rarr[indr]){
             arr[indarr]=larr[indl];
@@ -26,7 +29,7 @@ using namespace std;
         indarr++;
      }
 
-     //inserting remaining element
+     //inserting remaining elements ,if any
      while(indl<sizl){
         arr[indarr]=larr[indl];
         indl++;
@@ -41,9 +44,9 @@ using namespace std;
 
  }
 
- void mergesort(int arr[],int const left,int const right){
+ void mergesort(int arr[],int left,int right){
      if(left<right){
-        auto mid=(left+right)/2;
+        int mid=(left+right)/2;
         mergesort(arr,left,mid);
         mergesort(arr,mid+1,right);
         merging(arr,left,mid,right);
