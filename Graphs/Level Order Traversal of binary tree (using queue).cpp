@@ -22,7 +22,8 @@ class Node {
                 cout<<q.front()->data<<" ";
                 mp[q.front()->data]=1;
             }
-            if(q.front()->left!=NULL)
+            if(q.front()->left!=NULL)     //NOTE: here we do not check if the neighbouring node is already visited or not because it is binary tree
+                                          //   and we only have access to unvisited neighbouring nodes of a node that are its left and right child nodes
                q.push(q.front()->left);
             if(q.front()->right!=NULL)
                q.push(q.front()->right);
