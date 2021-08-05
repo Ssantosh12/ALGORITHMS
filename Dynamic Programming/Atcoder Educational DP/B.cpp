@@ -13,7 +13,7 @@ int main(){
         tim=k;
         for(j=i-1;j>=0&&tim>0;j--){
             if(cst[i]!=-1){
-                cst[i]=min(cst[i],abs(a[i]-a[j])+cst[j]);
+                cst[i]=min(cst[i],abs(a[i]-a[j])+cst[j]);  //out of all possible ways to get to ith posn we choose to get there from the posn which costs the minimum
             }
             else cst[i]=abs(a[i]-a[j])+cst[j];
             tim--;
