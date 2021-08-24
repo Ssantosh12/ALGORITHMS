@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    bool findTarget(TreeNode* root, int k) {
+    bool findTarget(TreeNode* root, int k) {  //NOTE: one more way to solve the problem is by inorder traversal of tree and storing the elements sorted manner in a vector
         int target,i;
         map<int,int> mp;
         inorder(root,mp);
