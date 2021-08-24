@@ -15,7 +15,8 @@ public:
         int target,i;
         map<int,int> mp;
         inorder(root,mp);
-        vector<int> vc;
+        vector<int> vc;   //we send this empty vector to the function in and if it comes back with two elements than there exists two elements whose sum is k(target)
+                          //NOTE: sending data strcutures as parameters by reference in a function changes the behaviour of this data strcuture when that function is called  
         in(root,mp,k,vc);
         if(!vc.empty())
            return true;
