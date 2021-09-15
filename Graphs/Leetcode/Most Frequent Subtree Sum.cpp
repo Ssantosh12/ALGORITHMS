@@ -31,6 +31,6 @@ public:
         sum=sum+subsum(node->left,mp);  //ask the left child its subtree sum
         sum=sum+subsum(node->right,mp);   //ask the right its subtree sum
         mp[sum]++;
-        return sum;
+        return sum;   //this whole subtree sum is returned to whoever asked about it
     }
 };
