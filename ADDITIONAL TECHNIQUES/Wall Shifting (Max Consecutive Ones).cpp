@@ -13,7 +13,7 @@ public:
     }
 };
 
-//OLDER WAY for this problem
+//OLDER WAY for this problem (finding breaking condtions and calculating at those points)
 /*
 class Solution {
 public:
@@ -22,10 +22,10 @@ public:
         for(i=0;i<nums.size();i++){
             if(nums[i]==1){
                 cnt++;
-                if(i==nums.size()-1)
+                if(i==nums.size()-1)   //breaking condition
                     mx=max(mx,cnt);
             }
-            else{
+            else{                //breaking conditon
                 mx=max(mx,cnt);
                 cnt=0;
             }
