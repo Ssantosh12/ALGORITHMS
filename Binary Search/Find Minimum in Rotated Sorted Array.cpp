@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int findMin(vector<int>& nums) {       //same as finding the 1st index of an element in sorted array(like lowerbound)
+    int findMin(vector<int>& nums) {       //similar as finding the 1st index of an element in sorted array(like lowerbound)
         int left=0,right=nums.size()-1,mid;
         while(left<right){
             mid=(left+right)/2;
