@@ -18,3 +18,32 @@ public:
    }
     
 };
+
+/*
+
+//ALTERNATE Solution
+
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<int> vc;
+        vector<vector<int>> ans;
+        subs(0,nums,vc,ans);
+        return ans;
+    }
+    void subs(int ind,vector<int> &nums, vector<int> &vc,vector<vector<int>> &ans){   //only difference here is that we are sending vc with reference
+        if(ind==nums.size()){
+            ans.push_back(vc);
+            return;
+        }
+        //we not take and take this element
+        
+        vc.push_back(nums[ind]);
+        subs(ind+1,nums,vc,ans);
+        vc.pop_back();              // 1st we push this element and then we pop this element i.e. we undid that we did, so we can send vc by reference
+        subs(ind+1,nums,vc,ans);
+        
+    }
+};
+
+*/
