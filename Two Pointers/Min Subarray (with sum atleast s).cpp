@@ -8,7 +8,7 @@ int main(){
     bool cnd=false;
     for(i=0;i<n;i++)
         scanf("%d",&a[i]);
-    //segment with sum atmost s and with maximum length
+    //segment with sum atleast s and with minimum length
     while(right<n){
         sum=sum+a[right];
         if(sum>=s){
