@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int j,n,i,out1=0,in1=0,mx=0,temp;
+    int j,n,i,out1=0,in1=0,mx=0,temp;   //problem: choose a segment i to j and flip all values inside it, find max no. of ones that can be generated in the whole array
     scanf("%d",&n);
     int a[n];
     for(i=0;i<n;i++){
