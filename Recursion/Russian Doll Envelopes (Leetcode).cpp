@@ -2,8 +2,9 @@ class Solution {
 public:
     int maxEnvelopes(vector<vector<int>>& envelopes) {
         //a particular subset will give the optimal results
-        //we can use this idea and use our recursive knowledge
-        sort(envelopes.begin(),envelopes.end());  //NOTE : Sometimes to find the optimal subset/subsequence , we must 1st order the set properly (here by sorting)
+        //we can use this idea and use our recursive knowledge from knapsack problem
+        
+        sort(envelopes.begin(),envelopes.end());  //NOTE : Sometimes to find the optimal subset/subsequence , we must fist order the set properly (here by sorting)
         return knapsack(0,envelopes,0,0);
    
     }
