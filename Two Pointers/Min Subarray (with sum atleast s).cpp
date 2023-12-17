@@ -13,8 +13,8 @@ int main(){
         sum=sum+a[right];
         if(sum>=s){
             cnd=true;
-            //mn=min(mn,right-left+1);  //no need to check here, since we need the smallest length, so first we reduce the subarray size from the left side
-                                           //as much as we can and then we check the last valid length of the subarray
+            //mn=min(mn,right-left+1);  // no need to check here, since we need the smallest length, so first we reduce the subarray size from the left side
+                                           // as much as we can and then we check the last valid length of the subarray
             while(sum>=s){
                 sum=sum-a[left];
                 left++;
