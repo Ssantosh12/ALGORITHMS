@@ -6,11 +6,11 @@ public:
         sort(nums.begin(),nums.end());
         for(i=0;i<=nums.size()-1;i++){
             if(nums[i]>0){
-                if(nums[i]==smallestPos)   // we found smallestPos then increase it by 1 and search for it
+                if(nums[i]==smallestPos)    // we found smallestPos then increase it by 1 and search for it
                     smallestPos++;
-                else if(nums[i]>smallestPos)     // means we could't find this smallest positive smallestPos
+                else if(nums[i]>smallestPos)      // means we could't find this smallest positive smallestPos
                     break;
-                                    // NOTE: if(nums[i]!=smallestPos&&nums[i]<smallestPos) then there is a chance we can find smallestPos ex: -3 -2 0 1 2 2 2 3 4 
+                                // NOTE: if(nums[i]!=smallestPos&&nums[i]<smallestPos) then there is a chance we can find smallestPos ex: -3 -2 0 1 2 2 2 3 4 
             }
         }
         return smallestPos;
