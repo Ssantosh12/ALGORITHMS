@@ -15,8 +15,8 @@ int main(){
         scanf("%d",&ele);
         left=0; right=n-1;
         while(left!=right){
-            mid=(left+right);   //diffrence lies here from closest to right problem, when even elements mid shifts to left of the two middle ones
-                                 //but we have to shift to the right of the two middle one to choose the mid otherwise loop won't break
+            mid=(left+right);     //diffrence lies here from closest to right problem, when even elements mid shifts to left of the two middle ones
+                                  //but we have to shift to the right of the two middle one to choose the mid otherwise loop won't break
             if(mid&1)
                 mid++;
             mid=mid/2;
