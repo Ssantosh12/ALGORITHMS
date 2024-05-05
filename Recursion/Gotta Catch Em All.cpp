@@ -9,6 +9,7 @@ int minCoins(int ind, vector<int> &vc, int nor, int mas){
     return min(vc[ind]*nor+minCoins(ind+1,vc,nor,mas), mas+minCoins(ind+1,vc,nor,mas));
 }
 
+// TODO : Solve using Dynamic Programming (like Memoization)
 
 int main() {
 	// your code goes here
