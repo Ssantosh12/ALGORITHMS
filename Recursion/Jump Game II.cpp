@@ -10,7 +10,7 @@ public:
         else if(nums[step]==0)
             return 1e4;   // infinite jumps required as it is impossible to reach (n-1)th step
 
-        // transition : from current state/subprobelm return the minimum of all the choices we can take
+        // transition : from current state/subproblem return the minimum of all the choices we can take
         int stateMinChoice=1e4;
         for(int i=1;i<=nums[step]&&step+i<=(nums.size()-1);i++){
             stateMinChoice=min(stateMinChoice,1+minJumpsToReachLast(step+i,nums));  // NOTE: using stateMinChoice default max value as INT_MAX gives Runtime Error as in min(result1,result2)
