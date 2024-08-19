@@ -37,7 +37,6 @@ int main() {
                 // then we have landed at one of the 'Y' and we update the segment to 'mid to high' (notice low=mid, since this mid is a possible answer as well)
                 low=mid;
             }
-
             else{
                 // we have landed at one of the 'N' and  we update the segment to 'low to mid-1' (notice high=mid-1, since this mid is NOT a possible answer)
                 high=mid-1;
