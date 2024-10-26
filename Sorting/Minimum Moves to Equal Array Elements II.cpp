@@ -1,6 +1,24 @@
 class Solution {
 public:
     int minMoves2(vector<int>& nums) {
+        // sort the array and change each element to the middle element (median) of the sorted array
+        int median,i,ops=0,n=nums.size();
+        sort(nums.begin(),nums.end());
+        
+        median=nums[n/2];  // when there are two medians, any of them can be chosen
+        for(i=0;i<=n-1;i++){
+            ops+=abs(median-nums[i]);
+        }
+        
+        return ops;
+    }
+};
+
+// OLD SOLUTION
+/*
+class Solution {
+public:
+    int minMoves2(vector<int>& nums) {
       
       //here we need to make all array elements equal in minimum total moves(one move is increment or decrement by 1 )
       //we sort the array, the most beneficial for all elements will be to change into midddle most element 
@@ -16,3 +34,4 @@ public:
         return cnt;
     }
 };
+*/
