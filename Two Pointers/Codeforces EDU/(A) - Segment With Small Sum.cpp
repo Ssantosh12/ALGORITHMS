@@ -35,6 +35,52 @@ int main() {
     cout<<longestSeg;
 }
 
+// Solution from 28th Jan 2025
+/*
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int i,n,maxSegment=0,left,right;
+    long long int s,segmentSum=0;
+
+    scanf("%d%lld",&n,&s);
+
+    int arr[n];
+    for(i=0;i<=n-1;i++)
+        scanf("%d",&arr[i]);
+
+    // using two pointers left and right to contain a running segment between them
+    // we move the right pointer to stretch the segment until it is valid
+    // and when it becomes invalid we stretch left pointer towards right direction
+    left=0;
+    right=0;
+    while(right<=n-1){
+        segmentSum+=arr[right];
+
+        if(segmentSum>s){
+            // then segment from left to right-1 was longest valid segment starting at left index
+            maxSegment=max(maxSegment,(right-1)-left+1);
+
+            // move the left pointer towards right until segment becomes valid
+            while(segmentSum>s){
+                segmentSum-=arr[left];
+                left++;
+            }
+        }
+
+        // another breaking condition for updation
+        if(right==n-1){
+            // then segment from left to right is longest valid segment starting at left index
+            maxSegment=max(maxSegment,right-left+1);
+        }
+        right++;
+    }
+    cout<<maxSegment;
+}
+
+*/
+
 // OLD Solution: also GOOD
 /*
 #include <bits/stdc++.h>
